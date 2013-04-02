@@ -123,3 +123,6 @@ h6 {font-size:1em;font-weight:normal}
 
 #shirt_image {width:500px;}
 #graph_image {width:290px;}
+
+#progress_table {padding:0;margin:0;}
+.hd {display:none;}
