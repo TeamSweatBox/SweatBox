@@ -1,0 +1,11 @@
+.container {width:792px;margin:0 auto}
+
+#header {height:160px;background:url(images/header-bg.gif) left top repeat-x #fff}
+#header, #content, #extra-content, #footer {font-size:0.75em}
+
+/* index.html */
+#page1 #content .col-1 {width:302px;margin-right:22px}
+#page1 #content .col-2 {width:302px;margin-right:22px}
+#page1 #content .col-3 {width:302px}
+#page1 #extra-content .col-1 {width:464px;margin-right:22px}
+#page1 #extra-content .col-2 {width:464px}

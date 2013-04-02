@@ -1,0 +1,125 @@
+* {margin:0;padding:0}
+
+html,body {height:100%}
+
+body {font-family:Tahoma,Geneva,sans-serif;font-size:100%;line-height:1em;color:#404141}
+
+.fleft {float:left}
+.fright {float:right}
+.clear {clear:both}
+.alignright {text-align:right}
+.aligncenter {text-align:center}
+.wrapper {width:100%;overflow:hidden}
+.container {width:100%}
+
+p {margin-bottom:16px}
+
+/* list */
+ul {list-style:none}
+.list1 li {padding-bottom:32px}
+.list1 li p {margin-bottom:6px}
+.list1 li a {font-weight:bold}
+.list2 {padding:4px 0 10px 0}
+.list2 li {width:100%;overflow:hidden;padding-bottom:20px}
+.list2 li.last {padding-bottom:0 !important}
+.list2 li img {float:left;margin-right:20px}
+.list2 li h5 {padding-top:6px}
+.list2 li h6 {padding-top:15px}
+.list3 li {list-style-type:disc;list-style-position:inside;padding-bottom:15px}
+.list3.color1 li {color:#58b01f}
+.list3.color2 li {color:#ff8002}
+.list3.color3 li {color:#f32e10}
+.list3 li span {color:#404141 !important}
+.list4 dt {font-weight:bold;margin-bottom:16px;color:#2cb6e9}
+.list4 dd {padding-bottom:16px}
+.carousel {width:100%;overflow:hidden}
+.carousel li {float:left;margin-right:15px}
+.carousel li.prev {margin-right:17px;padding-top:74px}
+.carousel li.next {margin-right:0;padding-top:74px}
+.phones-list li {width:100%;overflow:hidden;padding-bottom:16px}
+.phones-list li strong {float:left;width:69px;color:#2cb6e9}
+
+/* other */
+.img-indent {margin:0 20px 0 0;float:left}
+.img-indent.fright {float:right;margin:0 0 0 20px}
+.img-indent.alt {margin-bottom:30px}
+.img-box {width:100%;overflow:hidden;padding-bottom:20px}
+.img-box img {float:left;margin:0 20px 0 0}
+.extra-wrap {overflow:hidden}
+
+/* txt,links,lines,titles */
+a {color:#2cb6e9;outline:none}
+a:hover{text-decoration:none}
+h1 {font-size:3em;line-height:1em;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-weight:normal;letter-spacing:-1px;width:400px;margin-bottom:42px}
+h2 {font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:22px;line-height:1em;font-weight:normal;margin-bottom:23px;color:#515151}
+h2.alt {letter-spacing:-1px}
+h3 {font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:1.5em;line-height:1.1em;margin-bottom:10px}
+h4 {font-size:.91em;margin-bottom:10px}
+h4 strong {font-size:1.1em;color:#2cb6e9;display:block}
+h5 {font-size:1em;margin-bottom:5px}
+h6 {font-size:1em;font-weight:normal}
+.txt1 {color:#2cb6e9}
+
+/* header */
+#header .row-1 {height:100px}
+#header .logo {float:left;padding:22px 0 0 10px}
+#header .top-links {float:right;padding:45px 35px 0 0}
+#header .top-links li {float:left;margin-left:8px}
+#header .nav-box {background:url(images/nav-box-bg.gif) left top repeat-x;width:100%}
+#header .nav-box .left {background:url(images/nav-box-left.gif) no-repeat left top}
+#header .nav-box .right {background:url(images/nav-box-right.gif) no-repeat right top;height:47px}
+
+/* header navigation */
+#header .nav-box ul {font-family:"Trebuchet MS",Arial,Helvetica,sans-serif}
+#header .nav-box ul li {display:inline}
+#header .nav-box ul li a {display:block;float:left;color:#fff;text-decoration:none}
+#header .nav-box ul li a em {display:block;float:left;font-style:normal;background:url(images/divider-left.gif) no-repeat left 10px}
+#header .nav-box ul li a em b {display:block;float:left;height:47px;line-height:47px;width:158px;text-align:center;background:url(images/divider-right.gif) no-repeat right 10px;cursor:pointer}
+#header .nav-box ul li a:hover {background:url(images/nav-act.gif) left top repeat-x}
+#header .nav-box ul li a:hover em {background:url(images/divider-left-act.gif) no-repeat left 10px}
+#header .nav-box ul li a:hover b {background:url(images/divider-right-act.gif) no-repeat right 10px}
+#header .nav-box ul li a.current {background:url(images/nav-act.gif) left top repeat-x}
+#header .nav-box ul li a.current em {background:url(images/divider-left-act.gif) no-repeat left 10px}
+#header .nav-box ul li a.current b {background:url(images/divider-right-act.gif) no-repeat right 10px}
+#header .nav-box ul li a.first em {background:none}
+#header .nav-box ul li a.first:hover em {background:url(images/nav-left-act.gif) no-repeat left top}
+#header .nav-box ul li a.first-current {background:url(images/nav-act.gif) left top repeat-x}
+#header .nav-box ul li a.first-current em {background:url(images/nav-left-act.gif) no-repeat left top !important}
+#header .nav-box ul li a.first-current b {background:url(images/divider-right-act.gif) no-repeat right 10px}
+#header .nav-box ul li a.last b {background:none;width:160px}
+#header .nav-box ul li a.last:hover b {background:url(images/nav-right-act.gif) no-repeat right top}
+#header .nav-box ul li a.last-current {background:url(images/nav-act.gif) left top repeat-x}
+#header .nav-box ul li a.last-current em {background:url(images/divider-left-act.gif) no-repeat left 10px}
+#header .nav-box ul li a.last-current b {background:url(images/nav-right-act.gif) no-repeat right top !important;width:160px}
+
+/* content */
+#content {padding:0 0 20px 0;background:#fff}
+#content .section {padding-bottom:20px}
+#content .button {background:url(images/button-bg.gif) left top repeat-x;display:block;text-align:center;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;color:#fff;text-decoration:none;text-transform:uppercase}
+#content .button em {display:block;font-style:normal;background:url(images/button-left.gif) no-repeat left top}
+#content .button em b {display:block;height:35px;line-height:35px;background:url(images/button-right.gif) no-repeat right top;cursor:pointer}
+#content .button:hover {color:#000}
+#content .button1 {background:url(images/button1-bg.gif) left top repeat-x;display:block;text-align:center;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;color:#fff;text-decoration:none;text-transform:uppercase}
+#content .button1 em {display:block;font-style:normal;background:url(images/button1-left.gif) no-repeat left top}
+#content .button1 em b {display:block;height:35px;line-height:35px;background:url(images/button1-right.gif) no-repeat right top;cursor:pointer}
+#content .button1:hover {color:#000}
+#content .button2 {background:url(images/button2-bg.gif) left top repeat-x;display:block;text-align:center;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;color:#fff;text-decoration:none;text-transform:uppercase}
+#content .button2 em {display:block;font-style:normal;background:url(images/button2-left.gif) no-repeat left top}
+#content .button2 em b {display:block;height:35px;line-height:35px;background:url(images/button2-right.gif) no-repeat right top;cursor:pointer}
+#content .button2:hover {color:#000}
+#content .button3 {background:url(images/button3-bg.gif) left top repeat-x;display:block;text-align:center;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;color:#fff;text-decoration:none;text-transform:uppercase}
+#content .button3 em {display:block;font-style:normal;background:url(images/button3-left.gif) no-repeat left top}
+#content .button3 em b {display:block;height:35px;line-height:35px;background:url(images/button3-right.gif) no-repeat right top;cursor:pointer}
+#content .button3:hover {color:#000}
+.ic, .ic a {border:0;float:right;background:#f00;color:#f00;width:50%;line-height:10px;font-size:10px;margin:-50% 0 0 0;overflow:hidden;padding:0}
+
+.main-banner-big {width:792;height:100%;margin-bottom:20px}
+.main-banner-big .inner {padding:10px 0 0 10px}
+
+#video_div {padding-left:105px}
+
+#developers_table {margin:auto;border:100}
+#developers_header td {text-align: center;font-size: 15px}
+
+#shirt_image {width:500px;}
+#graph_image {width:290px;}

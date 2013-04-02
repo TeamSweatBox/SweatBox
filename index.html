@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>The Sweatbox APIA Webpage</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="layout.css" rel="stylesheet" type="text/css" />
+    <script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function view_overview()
+        {
+            $("#overview_page").show();
+            $("#the_device_page").hide();
+            $("#the_components_page").hide();
+            $("#videos_page").hide();
+            $("#the_developers_page").hide();
+
+            $("#overview-button").addClass("first-current");
+            $("#the-device-button").removeClass("current");
+            $("#the-components-button").removeClass("current");
+            $("#videos-button").removeClass("current");
+            $("#the-developers-button").removeClass("last-current");
+       }
+        function view_the_device()
+        {
+            $("#overview_page").hide();
+            $("#the_device_page").show();
+            $("#the_components_page").hide();
+            $("#videos_page").hide();
+            $("#the_developers_page").hide();
+
+            $("#overview-button").removeClass("first-current");
+            $("#the-device-button").addClass("current");
+            $("#the-components-button").removeClass("current");
+            $("#videos-button").removeClass("current");
+            $("#the-developers-button").removeClass("last-current");
+        }
+        function view_the_components()
+        {
+            $("#overview_page").hide();
+            $("#the_device_page").hide();
+            $("#the_components_page").show();
+            $("#videos_page").hide();
+            $("#the_developers_page").hide();
+
+            $("#overview-button").removeClass("first-current");
+            $("#the-device-button").removeClass("current");
+            $("#the-components-button").addClass("current");
+            $("#videos-button").removeClass("current");
+            $("#the-developers-button").removeClass("last-current");
+        }
+        function view_videos()
+        {
+            $("#overview_page").hide();
+            $("#the_device_page").hide();
+            $("#the_components_page").hide();
+            $("#videos_page").show();
+            $("#the_developers_page").hide();
+
+            $("#overview-button").removeClass("first-current");
+            $("#the-device-button").removeClass("current");
+            $("#the-components-button").removeClass("current");
+            $("#videos-button").addClass("current");
+            $("#the-developers-button").removeClass("last-current");
+        }
+        function view_the_developers()
+        {
+            $("#overview_page").hide();
+            $("#the_device_page").hide();
+            $("#the_components_page").hide();
+            $("#videos_page").hide();
+            $("#the_developers_page").show();
+
+            $("#overview-button").removeClass("first-current");
+            $("#the-device-button").removeClass("current");
+            $("#the-components-button").removeClass("current");
+            $("#videos-button").removeClass("current");
+            $("#the-developers-button").addClass("last-current");
+        }
+    </script>
+</head>
+<body id="page1">
+<!-- header -->
+	<div id="header">
+		<div class="container">
+			<div class="row-1">
+				<div class="logo"><a href="index.html"><img src="images/logo.jpg" /></a></div>
+			</div>
+			<div class="row-2">
+<!-- nav box begin -->
+				<div class="nav-box">
+					<div class="left">
+						<div class="right">
+							<ul>
+								<li><a id="overview-button" href="javascript:void(0)" onclick="javascript:view_overview()" class="first first-current"><em><b>OVERVIEW</b></em></a></li>
+								<li><a id="the-device-button" href="javascript:void(0)" onclick="javascript:view_the_device()"><em><b>THE DEVICE</b></em></a></li>
+								<li><a id="the-components-button" href="javascript:void(0)" onclick="javascript:view_the_components()"><em><b>THE COMPONENTS</b></em></a></li>
+								<li><a id="videos-button" href="javascript:void(0)" onclick="javascript:view_videos()"><em><b>VIDEOS</b></em></a></li>
+								<li><a id="the-developers-button" href="javascript:void(0)" onclick="javascript:view_the_developers()" class="last"><em><b>THE DEVELOPERS</b></em></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+<!-- nav box end -->
+			</div>
+		</div>
+	</div>
+<!-- content -->
+	<div id="content">
+        <div class="container">
+			<div class="main-banner-big">
+				<div class="inner">
+                    <div id="overview_page">
+                        <h2>
+                            Overview
+                        </h2>
+                        <div id="overview_page_text">
+                            &nbsp &nbsp Our proposal is to design and build a wearable physical activity monitor. The user’s activity is recorded by a pedometer and is visualized by an heart shaped LED array sewn into their t-shirt above the wearer’s breast. The activity metrics measured are number of steps taken since last reset and the instantaneous step rate. The number of steps taken is displayed by gradually shifting the color of the LED heart from red to green. The rate of steps (how active the user currently is) is displayed by displaying a throbbing animation on the LEDs using pulse width modulation. When the wearer is sedentary the heart will pulse slowly, when very active the heart animation will pulse rapidly.
+                            <br /><br />
+                            To control the device, there will be touch sensors  sewn into the fabric using conductive thread.  The user will swipe their fingers across any of the three controls (increment number of desired steps, decrement number of desired steps, and reset device).
+                        </div>
+                        <br /><br />
+                        <table dir="ltr" border="0" cellpadding="0" cellspacing="0" class="tblGenFixed" id="tblMain"><tbody><tr class="rShim"><td class="rShim" style="width:0;"></td><td class="rShim" style="width:120px;"></td><td class="rShim" style="width:120px;"></td><td class="rShim" style="width:120px;"></td><td class="rShim" style="width:120px;"></td></tr><tr dir="ltr"><td class="hd"><p style="height:16px;">.</p></td><td dir="ltr" class="s0">Tasks</td><td dir="ltr" class="s1">Projected hours</td><td dir="ltr" class="s1">Completed Hours</td><td dir="ltr" class="s1">Hours Remaining</td></tr><tr dir="ltr"><td class="hd"><p style="height:16px;">.</p></td><td dir="ltr" class="s3">Project Proposal</td><td class="s4">2</td><td class="s4">2</td><td class="s4">0</td></tr><tr dir="ltr"><td class="hd"><p style="height:16px;">.</p></td><td dir="ltr" class="s3">Website, first pass</td><td class="s4">4</td><td class="s4">2</td><td class="s4">2</td></tr><tr dir="ltr"><td class="hd"><p style="height:16px;">.</p></td><td dir="ltr" class="s3">Circuit design</td><td class="s4">3</td><td class="s4">1</td><td class="s4">2</td></tr><tr dir="ltr"><td class="hd"><p style="height:16px;">.</p></td><td dir="ltr" class="s3">Prototype display</td><td class="s4">2</td><td class="s4">0</td><td class="s4">2</td></tr><tr dir="ltr"><td class="hd"><p style="height:16px;">.</p></td><td dir="ltr" class="s3">Protoype interface</td><td class="s4">2</td><td class="s4">0</td><td class="s4">2</td></tr><tr dir="ltr"><td class="hd"><p style="height:16px;">.</p></td><td dir="ltr" class="s3">Implement design</td><td class="s4">5</td><td class="s4">0</td><td class="s4">5</td></tr><tr dir="ltr"><td class="hd"><p style="height:16px;">.</p></td><td dir="ltr" class="s3">update website</td><td class="s4">2</td><td class="s4">0</td><td class="s4">2</td></tr><tr dir="ltr"><td class="hd"><p style="height:16px;">.</p></td><td dir="ltr" class="s5">record video</td><td class="s6">3</td><td class="s6">0</td><td class="s6">3</td></tr><tr dir="ltr"><td class="hd"><p style="height:16px;">.</p></td><td dir="ltr" class="s7">Totals</td><td class="s8">23</td><td class="s8">5</td><td class="s8">18</td></tr></tbody></table>
+                        <div id="overview_page_images">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img id="shirt_image" src="images/shirt.png" />
+                                    </td>
+                                    <td>
+                                        <img id="graph_image" src="images/graph.png" />
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+	                <div id="the_device_page" style="display:none;">
+                        <h2>
+                            The Device
+                        </h2>
+                        <div id="the_device_page_text">
+                            &nbsp &nbsp The device will be controlled by touch sensors (implemented as Darlington pairs) on the hem of the shirt. There will be a reset button which resets the step counter to zero and puts the device into Goal Setting mode. In this mode the user can press the increase and decrease touch sensors to enter their step goal. The input will be displayed on the heart.  The rows of the heart are incrementally lit as the user presses the increase button, and incrementally decreased as the decrease button is pressed. If the heart is fully lit the target is 40,000 steps, if half lit the target is 20,000 steps, and so forth. This interface scheme requires that each row of the heart be addressable rather than each individual LED.
+                            <br /><br />
+                            We will interface with the pedometer in a similar manner to <a href="http://www.instructables.com/id/Arduino-Pedometer/step2/Pedometer-Wiring/">this guy</a>.
+                            <br /><br />
+                            We will sew the LEDs and other components to the shirt in the manner described by <a href="http://www.instructables.com/id/eTextiles-How-to-Sew-LEDs-and-Resistors-to-Fabric/">this lady</a>.
+                        </div>
+                    </div>
+                    <div id="the_components_page" style="display:none;">
+                        <h2>
+                            The Components
+                        </h2>
+                        <ul>
+                            <li>
+                                Pedometer ($10:Amazon.com)
+                            </li>
+                            <li>
+                                100x Bicolor LEDs ($10 + s/h:Jameco)
+                            </li>
+                            <li>
+                                Conductive Thread ($10.95 + s/h:sparkfun.com)
+                            </li>
+                            <li>
+                                T-Shirt ($0:Philip's closet)
+                            </li>
+                            <li>
+                                Arduino Teensy ($0:Our toolboxes)
+                            </li>
+                            <li>
+                                Battery ($0:Lying around)
+                            </li>
+                            <li>
+                                Misc Components ($x:Misc Places)
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="videos_page" style="display:none;">
+                        <h2>
+                            Videos
+                        </h2>
+                        More interesting videos to come
+                        <br /><br />
+                        <div id="video_div"><iframe width="560" height="315" src="http://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allowfullscreen></iframe></div>
+                    </div>
+                    <div id="the_developers_page" style="display:none;">
+                        <h2>
+                            The Developers
+                        </h2>
+                        <table id="developers_table">
+                            <tr id="developers_header">
+                                <td>
+                                    Oudy Yang
+                                </td>
+                                <td>
+                                    Robert Thackston
+                                </td>
+                                <td>
+                                    Philip Mallory
+                                </td>
+                            </tr>
+                            <tr id="developers_body">
+                                <td>
+                                    <img src="images/developers/yang.jpg"></img>
+                                </td>
+                                <td>
+                                    <img src="images/developers/thackston.jpg"></img>
+                                </td>
+                                <td>
+                                    <img src="images/developers/mallory.jpg"></img>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
