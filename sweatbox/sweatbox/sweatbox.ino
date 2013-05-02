@@ -11,6 +11,11 @@
 
 #define GSCALE 2 // Sets full-scale range to +/-2, 4, or 8g. Used to calc real g values.
 
+int increment_button = 0;
+int decrement_button = 1;
+
+boolean debug = true;
+
 // Global variables are the best variables
 boolean step_in_progress;
 int step_count;
@@ -18,6 +23,8 @@ int step_target;
 
 // the setup routine runs once when you press reset:
 void setup() {                
+   Serial.begin(57600);
+ 
   // initialize the heart led control pins as an output.
   for (int i=11; i<22; i++) {
     pinMode(i, OUTPUT);     
@@ -35,15 +42,21 @@ void setup() {
   // init globals
   step_in_progress = false;
   step_count = 0;
-  step_target = 10;
+  step_target = 40;
+  
+  pinMode(increment_button, INPUT);
+  pinMode(decrement_button, INPUT);
+  
+  enter_target();
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
-   checkForStep();
   
+   checkForStep();
+   
     // calculate percent progress towards goal
-   double progress = step_count/step_target;
+   double progress = (double)step_count/(double)step_target;
    int row_count;
    
    //determine how many rows to light up, don't illuminate more rows than actually exist
@@ -51,6 +64,13 @@ void loop() {
       row_count = int(11 * progress);
    else
       row_count = 11;
+    
+    if (debug) {
+      Serial.print("step count: ");  
+      Serial.println(step_count);
+      Serial.print("row count: ");
+      Serial.println(row_count);
+    }
    
    //clear the display
    for (int i=0; i<11; i++) {
@@ -64,22 +84,90 @@ void loop() {
  
    //maybe this saves battery life?
    delay(50);  
+
      
   
-  /* Code for testing!
+  // Code for testing!
+  /*
   for (int i=0; i<11; i++) {
     set_row(i, LOW);
   }
-  Serial.println("get low");
+  Serial.println("going low");
   
   delay(1500);
-    for (int i=0; i<11; i++) {
+  for (int i=0; i<11; i++) {
     set_row(i, HIGH);
+    delay(250);
   }
   Serial.println("high");
   delay(1500);
-  */
+  */ 
+}
+
+void enter_target() {
+  int frodo = 0; // Frodo lives
   
+  while (true) {
+   if (digitalRead(increment_button) && digitalRead(decrement_button)) {
+     if (frodo==1) {
+        if (debug) {
+          Serial.println("done programming");
+        }
+        break;
+     } else {
+        frodo=1;
+     }
+   }
+   
+   if (digitalRead(increment_button)) {
+     if (debug) {
+       Serial.println("incrementing");
+     }
+     pinMode(increment_button, OUTPUT);
+     digitalWrite(increment_button, LOW);
+     
+     step_target += 5;
+     if (step_target >= 100)
+       step_target = 100;
+   }
+   
+   if (digitalRead(decrement_button)) {
+     if (debug) {
+       Serial.println("deccrementing");
+     }
+     pinMode(decrement_button, OUTPUT);
+     digitalWrite(decrement_button, LOW);
+     
+     step_target -= 5;
+     if (step_target <= 0)
+       step_target=0;
+   }
+   
+   if (debug) {
+     Serial.print("step target: ");
+     Serial.println(step_target);
+   }
+   
+   //turn off all rows
+   for (int i=0; i<11; i++) {
+     set_row(i, HIGH);
+   }
+   
+   //display goal as percentage
+   double percent = double(step_target)/100.0;
+   int row_count;
+   
+   if (percent < 1.0)
+      row_count = int(11 * percent);
+   else
+      row_count = 11;
+   
+   for (int i=0; i<row_count; i++) {
+     set_row(i, LOW);
+   }
+   
+   delay(250);
+ }
 }
 
 void checkForStep() {
@@ -102,8 +190,10 @@ void checkForStep() {
   if (mag_acceleration > 1.30 && !step_in_progress) {
     step_in_progress = true;
     step_count++; 
-    Serial.print("You done stepped!: ");
-    Serial.println(mag_acceleration);
+    if (debug) {
+      Serial.print("You done stepped!: ");
+      Serial.println(mag_acceleration);
+    }
   } else if (mag_acceleration < 1.15) {
     step_in_progress = false;
   }
@@ -145,12 +235,16 @@ void initMMA8452()
   byte c = readRegister(WHO_AM_I);  // Read WHO_AM_I register
   if (c == 0x2A) // WHO_AM_I should always be 0x2A
   {  
-    Serial.println("MMA8452Q is online...");
+    if (debug) {
+      Serial.println("MMA8452Q is online...");
+    }
   }
   else
   {
-    Serial.print("Could not connect to MMA8452Q: 0x");
-    Serial.println(c, HEX);
+    if (debug) {
+      Serial.print("Could not connect to MMA8452Q: 0x");
+      Serial.println(c, HEX);
+    }
     while(1) ; // Loop forever if communication doesn't happen
   }
 
